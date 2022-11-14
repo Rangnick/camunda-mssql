@@ -2,7 +2,12 @@ FROM camunda/camunda-bpm-platform:latest
 
 USER root
 
-RUN apk add wget
+RUN apk add wget && apk add nano && apk add openjdk17-jre-headless
+
+#ENV DB_DRIVER=com.microsoft.sqlserver.jdbc.SQLServerDriver
+#ENV DB_URL=jdbc:sqlserver://serverName\instanceName:1433;
+#ENV DB_USERNAME=user
+#ENV DB_PASSWORD=sa
 
 RUN wget https://github.com/microsoft/mssql-jdbc/releases/download/v11.2.0/mssql-jdbc-11.2.0.jre17.jar 
 
